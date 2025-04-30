@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Destroyer : MonoBehaviour {
-
-    public GameObject masterObj;
+public class KabeOut : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +15,7 @@ public class Destroyer : MonoBehaviour {
 	}
 
     private void OnCollisionEnter(Collision collision) {
-        masterObj.GetComponent<GameMaster>().boxNum--;
-        Destroy(gameObject);
+        GameObject.Find("Master").GetComponent<GameMaster>().GameOver("ゲーム失敗．また挑戦しよう"); //<=====文字列を引数へ
     }
 }
+
